@@ -102,12 +102,15 @@ export default function HistoricoScreen() {
                 {grupos[data].map((pausa) => (
                   <Card
                     key={pausa.id}
-                    onPress={() => router.push(`/detalhes/${pausa.id}`)}>
+                    onPress={() => {
+                      console.log('clicou na pausa:', pausa.id);
+                      router.push(`/detalhes/${pausa.id}`);
+                    }}>
                     <View style={styles.cardHeader}>
                       <ThemedText type="defaultSemiBold" style={styles.cardTitle}>
                         Pausa
                       </ThemedText>
-                      <ThemedView
+                      <View
                         style={[
                           styles.statusBadge,
                           {
@@ -117,7 +120,7 @@ export default function HistoricoScreen() {
                         <ThemedText style={styles.statusText}>
                           {pausa.fim ? 'Finalizada' : 'Ativa'}
                         </ThemedText>
-                      </ThemedView>
+                      </View>
                     </View>
                     <ThemedText style={styles.cardText}>
                       Início: {formatarData(pausa.inicio)}

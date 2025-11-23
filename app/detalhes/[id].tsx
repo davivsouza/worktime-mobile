@@ -157,7 +157,7 @@ export default function DetalhesScreen() {
             <ThemedText style={styles.cardText}>
               Duração: {formatarDuracao(pausa.duracao)}
             </ThemedText>
-            <ThemedView
+            <View
               style={[
                 styles.statusBadge,
                 {
@@ -167,7 +167,7 @@ export default function DetalhesScreen() {
               <ThemedText style={styles.statusText}>
                 {pausa.fim ? 'Finalizada' : 'Ativa'}
               </ThemedText>
-            </ThemedView>
+            </View>
           </Card>
 
           <View style={styles.actions}>
