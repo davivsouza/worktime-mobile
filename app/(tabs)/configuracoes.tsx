@@ -9,8 +9,8 @@ import api from '@/services/api';
 import { storage } from '@/utils/storage';
 import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Alert, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
-
+import { Alert, ScrollView, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 export default function ConfiguracoesScreen() {
   const router = useRouter();
   const { usuario, logout } = useAuth();

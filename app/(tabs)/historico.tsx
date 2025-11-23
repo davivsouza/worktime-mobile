@@ -7,7 +7,8 @@ import { pausaService } from '@/services/api';
 import { Pausa } from '@/types/pausa';
 import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Alert, RefreshControl, ScrollView, StyleSheet, View, SafeAreaView } from 'react-native';
+import { Alert, RefreshControl, ScrollView, StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HistoricoScreen() {
   const router = useRouter();
@@ -103,11 +104,7 @@ export default function HistoricoScreen() {
                   <Card
                     key={pausa.id}
                     onPress={() => {
-                      console.log('clicou na pausa:', pausa.id);
-                      router.push({
-                        pathname: '/detalhes/[id]',
-                        params: { id: pausa.id }
-                      });
+                      router.push(`/detalhes/${pausa.id}`);
                     }}>
                     <View style={styles.cardHeader}>
                       <ThemedText type="defaultSemiBold" style={styles.cardTitle}>
