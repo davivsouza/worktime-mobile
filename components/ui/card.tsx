@@ -25,7 +25,11 @@ export function Card({ children, onPress }: CardProps) {
   );
 
   if (onPress) {
-    return <TouchableOpacity onPress={onPress}>{content}</TouchableOpacity>;
+    return (
+      <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
+        {content}
+      </TouchableOpacity>
+    );
   }
 
   return content;
