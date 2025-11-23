@@ -143,12 +143,15 @@ export default function HomeScreen() {
             pausas.map((pausa) => (
               <Card
                 key={pausa.id}
-                onPress={() => router.push(`/detalhes/${pausa.id}`)}>
+                onPress={() => router.push({
+                  pathname: '/detalhes/[id]',
+                  params: { id: pausa.id }
+                })}>
                 <View style={styles.cardHeader}>
                   <ThemedText type="defaultSemiBold" style={styles.cardTitle}>
                     Pausa
                   </ThemedText>
-                  <ThemedView
+                  <View
                     style={[
                       styles.statusBadge,
                       {
@@ -158,7 +161,7 @@ export default function HomeScreen() {
                     <ThemedText style={styles.statusText}>
                       {pausa.fim ? 'Finalizada' : 'Ativa'}
                     </ThemedText>
-                  </ThemedView>
+                  </View>
                 </View>
                 <ThemedText style={styles.cardText}>
                   Início: {formatarData(pausa.inicio)}

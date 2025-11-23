@@ -104,7 +104,10 @@ export default function HistoricoScreen() {
                     key={pausa.id}
                     onPress={() => {
                       console.log('clicou na pausa:', pausa.id);
-                      router.push(`/detalhes/${pausa.id}`);
+                      router.push({
+                        pathname: '/detalhes/[id]',
+                        params: { id: pausa.id }
+                      });
                     }}>
                     <View style={styles.cardHeader}>
                       <ThemedText type="defaultSemiBold" style={styles.cardTitle}>
